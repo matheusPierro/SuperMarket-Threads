@@ -1,4 +1,4 @@
 package br.com.matheuspierro.models;
 
-public class Produto {
+public class Product {
 }

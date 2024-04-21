@@ -9,9 +9,9 @@ public class Market {
         Shelf shelf = new Shelf();
         Cashier cashier = new Cashier();
 
-        for (int i = 1; i <= 10; i++) { // Suppose we have 10 customers
+        for (int i = 1; i <= 10; i++) {
             Customer customer = new Customer(i, shelf, cashier);
-            Thread customerThread = new Thread(customer);
+            Thread customerThread = new Thread(customer, String.format("Customer %s Thread", i));
             customerThread.start();
         }
     }

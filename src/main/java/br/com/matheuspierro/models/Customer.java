@@ -21,18 +21,15 @@ public class Customer implements Runnable {
             String[] possibleProducts = {"Product A", "Product B", "Product C"};
             Random random = new Random();
 
-            // Simulate the random choice of products
-            for (int i = 0; i < 5; i++) { // Assume each customer wants 5 products
+            for (int i = 0; i < 5; i++) {
                 String chosenProduct = possibleProducts[random.nextInt(possibleProducts.length)];
                 String product = shelf.pickProduct(chosenProduct);
                 if (product != null) {
                     cart.add(product);
                     System.out.println("Customer " + id + " picked up the product: " + product);
                 }
-                Thread.sleep(500); // Time to go to the shelf and pick up the product
+                Thread.sleep(2000);
             }
-
-            // Goes to the cashier
             cashier.serveCustomer(this.id, cart);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

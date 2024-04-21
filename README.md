@@ -48,6 +48,7 @@ To run the application, compile the Java files and then run the `Market` class. 
 - The Cashier class uses another ReentrantLock to manage customer queue and ensure that only one customer is served at a time.
 
 ### Future Enhancements
-- Improve product selection logic to handle more diverse and complex scenarios.
-- Add more detailed simulation aspects, such as multiple cashiers and different types of shelves.
-- Implement a GUI to visualize the market simulation in real-time.
+- Improve product selection logic to deal with more diverse and complex scenarios.
+- Add more detailed simulation aspects such as multiple boxes and different types of shelves.
+- Make sure that the cashier is activated from the moment a customer goes to the queue (it could be a cashier waiting for products to process, customers to serve) and that it works at the same time as other customers go to the store to buy products.
+- Create an Api to place a client on the market (The market becomes a server)

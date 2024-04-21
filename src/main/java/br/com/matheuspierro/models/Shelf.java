@@ -9,10 +9,9 @@ public class Shelf {
     private HashMap<String, Integer> products = new HashMap<>();
 
     public Shelf() {
-        // Initialize each shelf with 10 units of each product
-        products.put("Product A", 10);
-        products.put("Product B", 10);
-        products.put("Product C", 10);
+        products.put("Product A", 20);
+        products.put("Product B", 20);
+        products.put("Product C", 20);
     }
 
     public String pickProduct(String product) {
@@ -22,7 +21,8 @@ public class Shelf {
                 products.put(product, products.get(product) - 1);
                 return product;
             } else {
-                return null; // Product unavailable
+                System.out.println("Product unavailable");
+                return null;
             }
         } finally {
             lock.unlock();

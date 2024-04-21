@@ -16,13 +16,13 @@ public class Cashier {
             queue.add(customerId);
             while (!queue.peek().equals(customerId)) {
                 lock.unlock();
-                Thread.sleep(1000); // Wait a little before trying again
+                Thread.sleep(1000);
                 lock.lock();
             }
 
             for (String product : products) {
                 System.out.println("Cashier is serving customer " + customerId + " with product: " + product);
-                Thread.sleep(3000); // Each product takes 3 seconds to process
+                Thread.sleep(3000);
             }
             queue.remove();
         } finally {
